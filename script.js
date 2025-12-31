@@ -63,7 +63,14 @@ if (canvas) {
         requestAnimationFrame(animateParticles);
     }
 
-    window.addEventListener('resize', () => { resize(); });
+    let previousWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+        // Only resize if width changes (ignores mobile address bar vertical resize)
+        if (window.innerWidth !== previousWidth) {
+            previousWidth = window.innerWidth;
+            resize();
+        }
+    });
     resize();
     initParticles();
     animateParticles();
