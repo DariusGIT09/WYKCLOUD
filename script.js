@@ -63,7 +63,7 @@ if (canvas) {
         requestAnimationFrame(animateParticles);
     }
 
-    window.addEventListener('resize', () => { resize(); initParticles(); });
+    window.addEventListener('resize', () => { resize(); });
     resize();
     initParticles();
     animateParticles();
