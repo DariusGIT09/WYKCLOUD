@@ -263,7 +263,84 @@ if (mobileMenuBtn && mobileMenu) {
     });
 }
 
+// Execution Protocol Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const protocolSection = document.getElementById('execution-protocol');
+    const protocolLine = document.getElementById('protocol-line');
+    const steps = document.querySelectorAll('.protocol-step');
 
+    if (protocolSection && protocolLine) {
+        const runAnimation = () => {
+            const sectionTop = protocolSection.offsetTop;
+            const sectionHeight = protocolSection.offsetHeight;
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
 
+            if (scrollPosition > sectionTop - 100 && scrollPosition < sectionTop + sectionHeight + 500) {
+                const relativeScroll = scrollPosition - sectionTop;
+                let progressPercentage = (relativeScroll / sectionHeight) * 100;
 
+                progressPercentage = Math.max(0, Math.min(100, progressPercentage));
+                protocolLine.style.height = `${progressPercentage}%`;
 
+                steps.forEach((step, index) => {
+                    const threshold = (index + 0.2) * (100 / steps.length);
+                    if (progressPercentage > threshold) {
+                        step.classList.remove('opacity-0');
+                        step.classList.add('opacity-100', 'translate-y-0');
+                    }
+                });
+            }
+        };
+
+        window.addEventListener('scroll', runAnimation);
+        // Run once on load to catch initial state
+        runAnimation();
+    }
+});
+
+// Dynamic Infinite Marquee
+document.addEventListener('DOMContentLoaded', () => {
+    const marqueeTrack = document.querySelector('.marquee-track');
+    const marqueeContent = document.querySelector('.marquee-content');
+
+    if (marqueeTrack && marqueeContent) {
+        // Clone the content to create the seamless loop effect
+        const clone = marqueeContent.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true'); // Hide from screen readers to avoid duplication
+        marqueeTrack.appendChild(clone);
+    }
+});
+
+// --- 7. TERMINAL FAQ ACCORDION ---
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const cmdLine = item.querySelector('.cmd-line');
+        const content = item.querySelector('.faq-content');
+
+        if (cmdLine && content) {
+            cmdLine.addEventListener('click', () => {
+                // Toggle current item
+                const isOpen = content.classList.contains('open');
+
+                // Close all others (optional - can keep multiple open if preferred)
+                faqItems.forEach(otherItem => {
+                    const otherContent = otherItem.querySelector('.faq-content');
+                    if (otherContent && otherContent !== content) {
+                        otherContent.style.maxHeight = null;
+                        otherContent.classList.remove('open');
+                    }
+                });
+
+                if (!isOpen) {
+                    content.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.classList.remove('open');
+                    content.style.maxHeight = null;
+                }
+            });
+        }
+    });
+});

@@ -35,7 +35,7 @@ class WykFooter extends HTMLElement {
                             <li><a href="about.html" class="hover:text-cyan-400 transition-colors flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-slate-600"></i> About Us</a></li>
                             <li><a href="services.html" class="hover:text-cyan-400 transition-colors flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-slate-600"></i> Services</a></li>
                             <li><a href="index.html#data" class="hover:text-cyan-400 transition-colors flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-slate-600"></i> Performance</a></li>
-                            <li><a href="index.html#contact" class="hover:text-cyan-400 transition-colors flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-slate-600"></i> Contact</a></li>
+                            <li><a href="contact.html" class="hover:text-cyan-400 transition-colors flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-slate-600"></i> Contact</a></li>
                         </ul>
                     </div>
 

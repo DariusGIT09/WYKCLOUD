@@ -5,11 +5,21 @@
     --glass: rgba(15, 23, 42, 0.6);
 }
 
+html {
+    background-color: #050b14;
+}
+
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Rajdhani', sans-serif;
     background-color: var(--deep-bg);
     color: #e2e8f0;
     overflow-x: hidden;
+}
+
+wyk-footer {
+    display: block;
 }
 
 h1,
@@ -81,7 +91,7 @@ h3,
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     opacity: 0.6;
     will-change: transform;
     transform: translateZ(0);
@@ -96,8 +106,8 @@ h3,
 
 /* --- About Us Redesign --- */
 .team-avatar {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid transparent;
@@ -229,4 +239,480 @@ h3,
 
 .delay-800 {
     transition-delay: 800ms;
+}
+
+/* --- Core Arsenal (Tech Stack) --- */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Move exactly half the width (one set) */
+    }
+}
+
+.animate-scroll {
+    animation: scroll 40s linear infinite;
+    /* Slower speed for more content */
+    width: fit-content;
+    /* Ensure it fits content */
+}
+
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    color: #475569;
+    /* slate-600 */
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Specific Brand Colors with Neon Glow on Hover */
+.tech-icon.fa-react:hover {
+    color: #61DAFB;
+    filter: drop-shadow(0 0 10px rgba(97, 218, 251, 0.6));
+}
+
+.tech-icon.fa-node:hover {
+    color: #339933;
+    filter: drop-shadow(0 0 10px rgba(51, 153, 51, 0.6));
+}
+
+.tech-icon.fa-python:hover {
+    color: #3776AB;
+    filter: drop-shadow(0 0 10px rgba(55, 118, 171, 0.6));
+}
+
+.tech-icon.fa-aws:hover {
+    color: #FF9900;
+    filter: drop-shadow(0 0 10px rgba(255, 153, 0, 0.6));
+}
+
+.tech-icon.fa-docker:hover {
+    color: #2496ED;
+    filter: drop-shadow(0 0 10px rgba(36, 150, 237, 0.6));
+}
+
+.tech-icon.fa-figma:hover {
+    color: #F24E1E;
+    filter: drop-shadow(0 0 10px rgba(242, 78, 30, 0.6));
+}
+
+.tech-icon.fa-cloud:hover {
+    color: #7c3aed;
+    filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.6));
+}
+
+/* Terraform replacement */
+.tech-icon.fa-dharmachakra:hover {
+    color: #326CE5;
+    filter: drop-shadow(0 0 10px rgba(50, 108, 229, 0.6));
+}
+
+/* Kubernetes replacement */
+
+/* New Added Icons */
+.tech-icon.fa-js:hover {
+    color: #F7DF1E;
+    filter: drop-shadow(0 0 10px rgba(247, 223, 30, 0.6));
+}
+
+.tech-icon.fa-rust:hover {
+    color: #DEA584;
+    filter: drop-shadow(0 0 10px rgba(222, 165, 132, 0.6));
+}
+
+.tech-icon.fa-golang:hover {
+    color: #00ADD8;
+    filter: drop-shadow(0 0 10px rgba(0, 173, 216, 0.6));
+}
+
+.tech-icon.fa-git-alt:hover {
+    color: #F05032;
+    filter: drop-shadow(0 0 10px rgba(240, 80, 50, 0.6));
+}
+
+.tech-icon.fa-linux:hover {
+    color: #FCC624;
+    filter: drop-shadow(0 0 10px rgba(252, 198, 36, 0.6));
+}
+
+.tech-icon.fa-laravel:hover {
+    color: #FF2D20;
+    filter: drop-shadow(0 0 10px rgba(255, 45, 32, 0.6));
+}
+
+.tech-icon.fa-php:hover {
+    color: #777BB4;
+    filter: drop-shadow(0 0 10px rgba(119, 123, 180, 0.6));
+}
+
+.tech-icon.fa-java:hover {
+    color: #007396;
+    filter: drop-shadow(0 0 10px rgba(0, 115, 150, 0.6));
+}
+
+.tech-icon.fa-android:hover {
+    color: #3DDC84;
+    filter: drop-shadow(0 0 10px rgba(61, 220, 132, 0.6));
+}
+
+.tech-icon.fa-swift:hover {
+    color: #F05138;
+    filter: drop-shadow(0 0 10px rgba(240, 81, 56, 0.6));
+}
+
+/* Spring Boot (using leaf icon as generic or brand if available) */
+.tech-icon.fa-leaf:hover {
+    color: #6DB33F;
+    filter: drop-shadow(0 0 10px rgba(109, 179, 63, 0.6));
+}
+
+/* Round 2 Additions */
+/* NextJS (White) */
+.tech-icon.fa-arrow-up-right-from-square:hover {
+    color: #FFFFFF;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+/* NestJS (Crimson) */
+.tech-icon.fa-cat:hover {
+    color: #E0234E;
+    filter: drop-shadow(0 0 10px rgba(224, 35, 78, 0.6));
+}
+
+/* Oracle (Red) */
+.tech-icon.fa-database.oracle:hover {
+    color: #F80000;
+    filter: drop-shadow(0 0 10px rgba(248, 0, 0, 0.6));
+}
+
+/* MySQL (Blue) */
+.tech-icon.fa-database.mysql:hover {
+    color: #4479A1;
+    filter: drop-shadow(0 0 10px rgba(68, 121, 161, 0.6));
+}
+
+/* MongoDB (Green) */
+.tech-icon.fa-envira:hover {
+    color: #47A248;
+    filter: drop-shadow(0 0 10px rgba(71, 162, 72, 0.6));
+}
+
+/* Azure (Blue) */
+.tech-icon.fa-microsoft:hover {
+    color: #0078D4;
+    filter: drop-shadow(0 0 10px rgba(0, 120, 212, 0.6));
+}
+
+/* --- Image Icons (NextJS, NestJS) --- */
+.tech-icon-img {
+    height: 3rem;
+    /* Match font-size of icons */
+    width: auto;
+    filter: grayscale(100%) invert(0.6);
+    /* Invert to make dark logos look gray */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    object-fit: contain;
+}
+
+.tech-icon-img:hover {
+    filter: grayscale(0%) invert(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Specific Image Glows */
+.tech-icon-img.nextjs:hover {
+    /* Next.js logo is black, so invert it to white on hover for dark mode */
+    filter: invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+}
+
+.tech-icon-img.nestjs:hover {
+    filter: drop-shadow(0 0 10px rgba(224, 35, 78, 0.6));
+}
+
+.tech-icon-img.oracle:hover {
+    filter: drop-shadow(0 0 10px rgba(248, 0, 0, 0.6));
+}
+
+.tech-icon-img.mysql:hover {
+    filter: drop-shadow(0 0 10px rgba(68, 121, 161, 0.6));
+}
+
+.tech-icon-img.mongodb:hover {
+    filter: drop-shadow(0 0 10px rgba(71, 162, 72, 0.6));
+}
+
+.tech-icon-img.azure:hover {
+    filter: drop-shadow(0 0 10px rgba(0, 120, 212, 0.6));
+}
+
+/* --- Deployed Missions Effects --- */
+
+/* Glitch Text Effect */
+.glitch-text {
+    position: relative;
+    color: white;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #050b14;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip: rect(20px, 9999px, 15px, 0);
+    }
+
+    20% {
+        clip: rect(60px, 9999px, 70px, 0);
+    }
+
+    40% {
+        clip: rect(20px, 9999px, 50px, 0);
+    }
+
+    60% {
+        clip: rect(10px, 9999px, 30px, 0);
+    }
+
+    80% {
+        clip: rect(80px, 9999px, 90px, 0);
+    }
+
+    100% {
+        clip: rect(30px, 9999px, 60px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(25px, 9999px, 35px, 0);
+    }
+
+    20% {
+        clip: rect(65px, 9999px, 85px, 0);
+    }
+
+    40% {
+        clip: rect(15px, 9999px, 45px, 0);
+    }
+
+    60% {
+        clip: rect(5px, 9999px, 55px, 0);
+    }
+
+    80% {
+        clip: rect(75px, 9999px, 95px, 0);
+    }
+
+    100% {
+        clip: rect(35px, 9999px, 65px, 0);
+    }
+}
+
+/* --- Client Transmissions (Testimonials) --- */
+.comms-card {
+    background: rgba(5, 11, 20, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.comms-card:hover {
+    border-color: rgba(6, 182, 212, 0.8);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.2);
+    transform: translateY(-5px);
+}
+
+.comms-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid #06b6d4;
+    border-left: 2px solid #06b6d4;
+    opacity: 0.5;
+}
+
+.comms-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid #06b6d4;
+    border-right: 2px solid #06b6d4;
+    opacity: 0.5;
+}
+
+.ring-spin {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #06b6d4;
+    border-right-color: #a855f7;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.signal-status {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.05em;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.signal-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #06b6d4;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #06b6d4;
+    animation: pulse-signal 2s infinite;
+}
+
+@keyframes pulse-signal {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 5px #06b6d4;
+    }
+
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 2px #06b6d4;
+    }
+}
+
+.folder-tab {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(6, 182, 212, 0.2);
+    border-bottom-left-radius: 8px;
+    padding: 2px 10px;
+    border-left: 1px solid rgba(6, 182, 212, 0.3);
+    border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+    font-size: 0.6rem;
+    font-family: 'Rajdhani', sans-serif;
+
+    /* --- Terminal FAQ (CLI Style) --- */
+    .terminal-box {
+        background: #050b14;
+        border: 1px solid rgba(6, 182, 212, 0.3);
+        font-family: 'Fira Code', 'Courier New', Courier, monospace;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .cmd-line {
+        cursor: pointer;
+        color: #4ade80;
+        /* Terminal Green */
+        transition: all 0.2s ease;
+    }
+
+    .cmd-line:hover {
+        color: #22d3ee;
+        /* Cyan hover */
+        text-shadow: 0 0 5px rgba(34, 211, 238, 0.5);
+    }
+
+    .terminal-answer {
+        border-left: 2px solid rgba(6, 182, 212, 0.3);
+        padding-left: 1rem;
+        margin-left: 0.5rem;
+        color: #cbd5e1;
+        /* Slate 300 */
+    }
+
+    .cursor-blink {
+        display: inline-block;
+        width: 8px;
+        height: 1.2em;
+        background-color: #4ade80;
+        vertical-align: middle;
+        animation: blink-cursor 1s step-end infinite;
+    }
+
+    @keyframes blink-cursor {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        opacity: 0;
+    }
+
+    .faq-content.open {
+        opacity: 1;
+    }
 }
