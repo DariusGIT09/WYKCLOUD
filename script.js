@@ -291,6 +291,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const steps = document.querySelectorAll('.protocol-step');
 
     if (protocolSection && protocolLine) {
+        // [VISIBILITY FALLBACK] Add opacity-0 only IF javascript is running
+        steps.forEach(step => step.classList.add('opacity-0'));
+
         const runAnimation = () => {
             const sectionTop = protocolSection.offsetTop;
             const sectionHeight = protocolSection.offsetHeight;
