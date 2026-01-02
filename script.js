@@ -78,110 +78,131 @@ if (canvas) {
 
 
 
+
 // --- 3. CHART.JS VISUALIZATIONS ---
 
 // Common Chart Options
-// Common Chart Options
 if (typeof Chart !== 'undefined') {
-    Chart.defaults.color = '#94a3b8';
-    Chart.defaults.font.family = "'Rajdhani', sans-serif";
+    try {
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.font.family = "'Rajdhani', sans-serif";
+    } catch (e) {
+        console.warn('Error setting Chart defaults:', e);
+    }
 }
 
 const techRadarEl = document.getElementById('techRadarChart');
 if (techRadarEl) {
-    const techRadarCtx = techRadarEl.getContext('2d');
-    // 1. TECH CAPABILITY RADAR (Spider Chart)
-    // Comparing WykCloud vs Industry Average
-    let techRadarChart = new Chart(techRadarCtx, {
-        type: 'radar',
-        data: {
-            labels: ['Security', 'Scalability', 'Speed', 'AI Integration', 'UX Design', 'Reliability'],
-            datasets: [{
-                label: 'WykCloud Standards',
-                data: [95, 90, 98, 85, 92, 99],
-                fill: true,
-                backgroundColor: 'rgba(0, 240, 255, 0.2)',
-                borderColor: '#00f0ff',
-                pointBackgroundColor: '#00f0ff',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: '#00f0ff',
-                borderWidth: 2
-            }, {
-                label: 'Industry Average',
-                data: [65, 50, 60, 40, 55, 70],
-                fill: true,
-                backgroundColor: 'rgba(112, 0, 255, 0.1)',
-                borderColor: '#7000ff',
-                pointBackgroundColor: '#7000ff',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: '#7000ff',
-                borderWidth: 2,
-                borderDash: [5, 5]
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            element: {
-                line: { tension: 0.4 }
-            },
-            scales: {
-                r: {
-                    angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
-                    grid: { color: 'rgba(0, 240, 255, 0.1)' }, // Neon grid
-                    pointLabels: {
-                        color: '#fff',
-                        font: { size: 12, weight: 'bold' }
+    if (typeof Chart !== 'undefined') {
+        try {
+            const techRadarCtx = techRadarEl.getContext('2d');
+            // 1. TECH CAPABILITY RADAR (Spider Chart)
+            // Comparing WykCloud vs Industry Average
+            let techRadarChart = new Chart(techRadarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Security', 'Scalability', 'Speed', 'AI Integration', 'UX Design', 'Reliability'],
+                    datasets: [{
+                        label: 'WykCloud Standards',
+                        data: [95, 90, 98, 85, 92, 99],
+                        fill: true,
+                        backgroundColor: 'rgba(0, 240, 255, 0.2)',
+                        borderColor: '#00f0ff',
+                        pointBackgroundColor: '#00f0ff',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#00f0ff',
+                        borderWidth: 2
+                    }, {
+                        label: 'Industry Average',
+                        data: [65, 50, 60, 40, 55, 70],
+                        fill: true,
+                        backgroundColor: 'rgba(112, 0, 255, 0.1)',
+                        borderColor: '#7000ff',
+                        pointBackgroundColor: '#7000ff',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#7000ff',
+                        borderWidth: 2,
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    element: {
+                        line: { tension: 0.4 }
                     },
-                    ticks: { display: false, backdropColor: 'transparent' }
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                            grid: { color: 'rgba(0, 240, 255, 0.1)' }, // Neon grid
+                            pointLabels: {
+                                color: '#fff',
+                                font: { size: 12, weight: 'bold' }
+                            },
+                            ticks: { display: false, backdropColor: 'transparent' }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top', labels: { usePointStyle: true, color: '#fff' } }
+                    }
                 }
-            },
-            plugins: {
-                legend: { position: 'top', labels: { usePointStyle: true, color: '#fff' } }
-            }
+            });
+        } catch (e) {
+            console.error('Tech Radar Chart failed to load:', e);
         }
-    });
+    } else {
+        console.warn('Chart.js not loaded. Tech Radar skipped.');
+        // Optional: Add a fallback visual or text indicating charts are unavailable?
+    }
 }
 
 const techStackEl = document.getElementById('techStackChart');
 if (techStackEl) {
-    const techStackCtx = techStackEl.getContext('2d');
-    // 2. TECH STACK ECOSYSTEM (Polar Area Chart)
-    // Visualizing key technologies driving solutions
-    let techStackChart = new Chart(techStackCtx, {
-        type: 'polarArea',
-        data: {
-            labels: ['React / Next.js', 'Python / AI', 'Cloud (AWS/Azure)', 'Node.js', 'CyberSec / Blockchain'],
-            datasets: [{
-                label: 'Technology Dominance',
-                data: [90, 85, 95, 80, 75],
-                backgroundColor: [
-                    'rgba(0, 240, 255, 0.6)', // Cyan
-                    'rgba(112, 0, 255, 0.6)', // Purple
-                    'rgba(217, 70, 239, 0.6)', // Pink
-                    'rgba(34, 197, 94, 0.6)',  // Green
-                    'rgba(234, 179, 8, 0.6)'   // Yellow
-                ],
-                borderColor: '#1e293b', // Dark border matching bg
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                r: {
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                    ticks: { display: false, backdropColor: 'transparent' }
+    if (typeof Chart !== 'undefined') {
+        try {
+            const techStackCtx = techStackEl.getContext('2d');
+            // 2. TECH STACK ECOSYSTEM (Polar Area Chart)
+            // Visualizing key technologies driving solutions
+            let techStackChart = new Chart(techStackCtx, {
+                type: 'polarArea',
+                data: {
+                    labels: ['React / Next.js', 'Python / AI', 'Cloud (AWS/Azure)', 'Node.js', 'CyberSec / Blockchain'],
+                    datasets: [{
+                        label: 'Technology Dominance',
+                        data: [90, 85, 95, 80, 75],
+                        backgroundColor: [
+                            'rgba(0, 240, 255, 0.6)', // Cyan
+                            'rgba(112, 0, 255, 0.6)', // Purple
+                            'rgba(217, 70, 239, 0.6)', // Pink
+                            'rgba(34, 197, 94, 0.6)',  // Green
+                            'rgba(234, 179, 8, 0.6)'   // Yellow
+                        ],
+                        borderColor: '#1e293b', // Dark border matching bg
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { display: false, backdropColor: 'transparent' }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'right', labels: { usePointStyle: true, color: '#fff' } }
+                    }
                 }
-            },
-            plugins: {
-                legend: { position: 'right', labels: { usePointStyle: true, color: '#fff' } }
-            }
+            });
+        } catch (e) {
+            console.error('Tech Stack Chart failed to load:', e);
         }
-    });
+    } else {
+        console.warn('Chart.js not loaded. Tech Stack skipped.');
+    }
 }
 
 
