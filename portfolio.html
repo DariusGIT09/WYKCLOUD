@@ -27,6 +27,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Favicon Links -->
     <link rel="icon" type="image/x-icon" href="Public/Favicon/favicon.ico">
 </head>
@@ -88,7 +91,7 @@
         </div>
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 brand-font uppercase tracking-widest glitch-text"
-                data-text="DEPLOYED MISSIONS">
+                data-text="DEPLOYED MISSIONS" data-aos="zoom-in" data-aos-duration="1500">
                 DEPLOYED <span class="text-cyan-400">MISSIONS</span>
             </h1>
             <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
@@ -103,8 +106,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- Mission Card 1: EUROPOL -->
-                <div
-                    class="mission-card group relative rounded-xl overflow-hidden h-[500px] border border-slate-800 hover:border-cyan-500/50 transition-all duration-500 bg-[#08101f]">
+                <div class="mission-card group relative rounded-xl overflow-hidden h-[500px] border border-slate-800 hover:border-cyan-500/50 transition-all duration-500 bg-[#08101f]"
+                    data-aos="fade-up" data-aos-delay="100">
                     <!-- Background Image (Placeholder) -->
                     <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070"
                         alt="Cyber Security Background"
@@ -156,8 +159,8 @@
                 </div>
 
                 <!-- Mission Card 2: BUPA -->
-                <div
-                    class="mission-card group relative rounded-xl overflow-hidden h-[500px] border border-slate-800 hover:border-emerald-500/50 transition-all duration-500 bg-[#08101f]">
+                <div class="mission-card group relative rounded-xl overflow-hidden h-[500px] border border-slate-800 hover:border-emerald-500/50 transition-all duration-500 bg-[#08101f]"
+                    data-aos="fade-up" data-aos-delay="200">
                     <!-- Background Image -->
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070"
                         alt="Medical Tech Background"
@@ -206,8 +209,8 @@
                 </div>
 
                 <!-- Mission Card 3: EVOLVE -->
-                <div
-                    class="mission-card group relative rounded-xl overflow-hidden h-[500px] border border-slate-800 hover:border-purple-500/50 transition-all duration-500 bg-[#08101f]">
+                <div class="mission-card group relative rounded-xl overflow-hidden h-[500px] border border-slate-800 hover:border-purple-500/50 transition-all duration-500 bg-[#08101f]"
+                    data-aos="fade-up" data-aos-delay="300">
                     <!-- Background Image -->
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070"
                         alt="Fintech Background"
@@ -277,6 +280,17 @@
                 mobileMenu.classList.toggle('flex-col'); // Ensure it's vertical
             });
         }
+    </script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
     </script>
 </body>
 
