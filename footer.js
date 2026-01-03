@@ -70,13 +70,7 @@ class WykFooter extends HTMLElement {
                             </li>
                         </ul>
 
-                        <h4 class="text-white font-bold text-sm uppercase mb-3 mt-8">Newsletter</h4>
-                        <div class="flex">
-                            <input type="email" placeholder="Your Email" class="bg-slate-800 border border-slate-600 text-white px-4 py-2 text-sm w-full focus:outline-none focus:border-cyan-400 rounded-l-sm">
-                            <button class="bg-cyan-500 hover:bg-cyan-400 text-black px-4 py-2 font-bold uppercase text-xs rounded-r-sm transition-colors">
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </div>
+
                     </div>
                 </div>
 
