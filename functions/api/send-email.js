@@ -50,6 +50,13 @@ export async function onRequestPost(context) {
             `
         });
 
+        if (data.error) {
+            return new Response(JSON.stringify({ success: false, error: data.error }), {
+                headers: { 'Content-Type': 'application/json' },
+                status: 400
+            });
+        }
+
         return new Response(JSON.stringify({ success: true, data }), {
             headers: { 'Content-Type': 'application/json' },
             status: 200
