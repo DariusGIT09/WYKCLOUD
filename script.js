@@ -368,3 +368,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// --- 8. EMAILJS FORM HANDLING ---
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (contactForm && submitBtn) {
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Loading State
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Transmitting...';
+            submitBtn.disabled = true;
+
+            // Generate a random 5 digit number for the ID (simulated ticket ID)
+            const ticketId = Math.floor(10000 + Math.random() * 90000);
+
+            // These IDs from the user's EmailJS dashboard
+            // SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY handled in HTML init or here
+            const serviceID = 'service_9oqm6j7';
+            const templateID = 'template_1cjbaba';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    // Success State
+                    submitBtn.classList.remove('from-cyan-500', 'to-blue-600');
+                    submitBtn.classList.add('from-green-500', 'to-emerald-600');
+                    submitBtn.innerHTML = `<i class="fa-solid fa-check mr-2"></i> Transmission Complete (ID: #${ticketId})`;
+
+                    // Reset form after a delay
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitBtn.classList.add('from-cyan-500', 'to-blue-600');
+                        submitBtn.classList.remove('from-green-500', 'to-emerald-600');
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    }, 5000);
+                }, (err) => {
+                    // Error State
+                    console.error('EmailJS Error:', err);
+                    submitBtn.classList.remove('from-cyan-500', 'to-blue-600');
+                    submitBtn.classList.add('from-red-500', 'to-rose-600');
+                    submitBtn.innerHTML = '<i class="fa-solid fa-triangle-exclamation mr-2"></i> Transmission Failed';
+
+                    alert('Transmission failed. Please check encryption keys (Service/Template IDs) or try again later.');
+
+                    setTimeout(() => {
+                        submitBtn.classList.add('from-cyan-500', 'to-blue-600');
+                        submitBtn.classList.remove('from-red-500', 'to-rose-600');
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                });
+        });
+    }
+});
