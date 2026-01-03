@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const serviceID = 'service_9oqm6j7';
             const templateID = 'template_1cjbaba';
 
-            emailjs.sendForm(serviceID, templateID, this)
+            emailjs.sendForm(serviceID, templateID, this, 'SEg1VivDitOJ7hS2Y')
                 .then(() => {
                     // Success State
                     submitBtn.classList.remove('from-cyan-500', 'to-blue-600');
