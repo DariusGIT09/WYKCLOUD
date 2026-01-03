@@ -13,7 +13,7 @@ export async function onRequestPost(context) {
         // Sending the email
         const data = await resend.emails.send({
             from: 'WYKCLOUD Website <onboarding@resend.dev>', // Update this if you have a verified domain on Resend
-            to: ['office@wykcloud.co.uk', "dariuscatinas1@gmail.com"], // Multiple recipients
+            to: ["dariuscatinas1@gmail.com"], // Must be your registered Resend email until domain is verified
             subject: `[Lead] New Inquiry from ${user_name}`,
             html: `
             <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #050b14; color: #e2e8f0; max-width: 600px; margin: 0 auto; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);">
