@@ -1,0 +1,15 @@
+{
+  "name": "wykcloud",
+  "version": "1.0.0",
+  "main": "footer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "resend": "^6.6.0"
+  }
+}

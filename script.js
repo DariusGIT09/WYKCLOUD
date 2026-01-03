@@ -370,12 +370,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- 8. EMAILJS FORM HANDLING ---
+// --- 8. CLOUDFLARE FUNCTIONS FORM HANDLING ---
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
 
     if (contactForm && submitBtn) {
-        contactForm.addEventListener('submit', function (event) {
+        contactForm.addEventListener('submit', async function (event) {
             event.preventDefault();
 
             // Loading State
@@ -383,17 +384,27 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Transmitting...';
             submitBtn.disabled = true;
 
-            // Generate a random 5 digit number for the ID (simulated ticket ID)
-            const ticketId = Math.floor(10000 + Math.random() * 90000);
+            // Gather form data
+            const formData = new FormData(contactForm);
+            const formObject = Object.fromEntries(formData.entries());
 
-            // These IDs from the user's EmailJS dashboard
-            // SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY handled in HTML init or here
-            const serviceID = 'service_9oqm6j7';
-            const templateID = 'template_1cjbaba';
+            try {
+                // Send data to Cloudflare Function
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formObject)
+                });
 
-            emailjs.sendForm(serviceID, templateID, this, 'SEg1VivDitOJ7hS2Y')
-                .then(() => {
+                const result = await response.json();
+
+                if (response.ok && result.success) {
                     // Success State
+                    // Generate a random 5 digit ticket ID for display
+                    const ticketId = Math.floor(10000 + Math.random() * 90000);
+
                     submitBtn.classList.remove('from-cyan-500', 'to-blue-600');
                     submitBtn.classList.add('from-green-500', 'to-emerald-600');
                     submitBtn.innerHTML = `<i class="fa-solid fa-check mr-2"></i> Transmission Complete (ID: #${ticketId})`;
@@ -406,22 +417,25 @@ document.addEventListener('DOMContentLoaded', () => {
                         submitBtn.innerHTML = originalBtnText;
                         submitBtn.disabled = false;
                     }, 5000);
-                }, (err) => {
-                    // Error State
-                    console.error('EmailJS Error:', err);
-                    submitBtn.classList.remove('from-cyan-500', 'to-blue-600');
-                    submitBtn.classList.add('from-red-500', 'to-rose-600');
-                    submitBtn.innerHTML = '<i class="fa-solid fa-triangle-exclamation mr-2"></i> Transmission Failed';
+                } else {
+                    throw new Error(result.error || 'Server responded with an error');
+                }
+            } catch (err) {
+                // Error State
+                console.error('Submission Error:', err);
+                submitBtn.classList.remove('from-cyan-500', 'to-blue-600');
+                submitBtn.classList.add('from-red-500', 'to-rose-600');
+                submitBtn.innerHTML = '<i class="fa-solid fa-triangle-exclamation mr-2"></i> Transmission Failed';
 
-                    alert('Transmission failed. Please check encryption keys (Service/Template IDs) or try again later.');
+                alert('Transmission failed. Please try again later.');
 
-                    setTimeout(() => {
-                        submitBtn.classList.add('from-cyan-500', 'to-blue-600');
-                        submitBtn.classList.remove('from-red-500', 'to-rose-600');
-                        submitBtn.innerHTML = originalBtnText;
-                        submitBtn.disabled = false;
-                    }, 3000);
-                });
+                setTimeout(() => {
+                    submitBtn.classList.add('from-cyan-500', 'to-blue-600');
+                    submitBtn.classList.remove('from-red-500', 'to-rose-600');
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
         });
     }
 });
