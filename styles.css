@@ -7,6 +7,8 @@
 
 html {
     background-color: #050b14;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -16,6 +18,7 @@ body {
     background-color: var(--deep-bg);
     color: #e2e8f0;
     overflow-x: hidden;
+    width: 100%;
 }
 
 wyk-footer {
