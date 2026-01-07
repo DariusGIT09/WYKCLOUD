@@ -58,7 +58,7 @@ class WykFooter extends HTMLElement {
                         <ul class="space-y-4 text-sm mb-8">
                             <li class="flex items-start">
                                 <i class="fa-solid fa-location-dot text-cyan-400 mt-1 mr-3"></i>
-                                <span>13, Barring Street,<br>Northampton, NN5 4DD, UK</span>
+                                <span data-nosnippet>13, Barring Street,<br>Northampton, NN5 4DD, UK</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fa-solid fa-envelope text-cyan-400 mr-3"></i>

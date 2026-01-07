@@ -7,11 +7,6 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Main SPA Sections (Pointing to same URL for crawler awareness of content significance, 
-       thought hash URLs are often ignored by sitemaps, we list main separate pages if they existed. 
-       Since it's SPA, we ensure the root is priority. 
-       If we had separate html files like about.html which exist in the directory, we link them) -->
-  
   <url>
     <loc>https://wykcloud.co.uk/about.html</loc>
     <priority>0.8</priority>
@@ -24,6 +19,24 @@
   
   <url>
     <loc>https://wykcloud.co.uk/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Key Anchors -->
+  <url>
+    <loc>https://wykcloud.co.uk/#services</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wykcloud.co.uk/#about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wykcloud.co.uk/#missions</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wykcloud.co.uk/#contact</loc>
     <priority>0.8</priority>
   </url>
 
