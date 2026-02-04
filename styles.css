@@ -125,15 +125,50 @@ h3,
     transform: scale(1.05);
 }
 
+/* Cyberpunk Skill Card Effect */
 .skill-card {
-    transition: all 0.1s ease-out;
-    border-left: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 4px solid transparent;
+    /* Reset to allow HTML classes to dictate color, but provide base structure */
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+    z-index: 0;
+}
+
+.skill-card:hover::after {
+    transform: translateX(100%);
 }
 
 .skill-card:hover {
-    background: rgba(17, 25, 40, 0.9);
-    border-left-color: var(--neon-purple);
-    transform: translateX(10px);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    background: rgba(20, 30, 48, 0.85);
+    /* Slightly lighter than base */
+}
+
+/* Specific Border Glows based on Tailwind classes usually applied, 
+   but since we can't easily target "border-blue-500" from CSS without that class,
+   we rely on the border-color cascading. 
+   We add a generic glow that picks up the "border-left-color" if supported, 
+   or we just add a nice cyber-cyan glow for all if we can't match perfectly.
+   Actually, the best way to "glow" the border color is to use the box-shadow with the variable if possible,
+   but here we will add a cool neutral cyber glow that fits the theme. 
+*/
+.skill-card:hover {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15),
+        inset 0 0 10px rgba(0, 240, 255, 0.05);
 }
 
 /* Utility for Physics Elements */
