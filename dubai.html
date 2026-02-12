@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WYK Cloud — Enterprise Cloud & Security for Dubai Businesses</title>
+    <meta name="description"
+        content="WYK Cloud: A trusted UK-based Cloud Agency providing enterprise-grade Security and Migration services to Dubai businesses. Reduce IT costs by 30%.">
+    <link rel="canonical" href="https://wykcloud.co.uk/dubai">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wykcloud.co.uk/dubai">
+    <meta property="og:title" content="WYK Cloud — British Cloud Standards. Built for Dubai Enterprises.">
+    <meta property="og:description"
+        content="Secure Cloud Migration & DevOps Services. Reduce IT costs by 30% with a trusted UK partner operating in the UAE.">
+    <meta property="og:image" content="https://wykcloud.co.uk/Public/WykCloud.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Public/Favicon/favicon.ico">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#102a43',
+                            950: '#0a1929',
+                        },
+                        accent: '#f97316',
+                        whatsapp: '#25D366',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* ─── Base ─── */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── Hero Gradient ─── */
+        .hero-gradient {
+            background: linear-gradient(135deg, #102a43 0%, #1a3a5c 40%, #243b53 70%, #0f2137 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* ─── Grid Pattern Overlay ─── */
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        /* ─── Badge Pill ─── */
+        .badge-pill {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        /* ─── Trust Card ─── */
+        .trust-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .trust-card:hover {
+            border-color: #f97316;
+            box-shadow: 0 10px 40px rgba(249, 115, 22, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* ─── Problem/Solution ─── */
+        .ps-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .ps-card:hover {
+            box-shadow: 0 20px 60px rgba(16, 42, 67, 0.08);
+            transform: translateY(-3px);
+        }
+
+        /* ─── Service Card ─── */
+        .service-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #102a43, #38bdf8);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 20px 60px rgba(16, 42, 67, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* ─── CTA Section ─── */
+        .cta-gradient {
+            background: linear-gradient(135deg, #102a43 0%, #1a3a5c 50%, #243b53 100%);
+        }
+
+        /* ─── WhatsApp Float ─── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes pulse-whatsapp {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        /* ─── CTA Button Glow ─── */
+        .btn-glow {
+            transition: all 0.3s ease;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* ─── Logo Placeholder Grid ─── */
+        .logo-placeholder {
+            background: #f1f5f9;
+            border: 1px dashed #cbd5e1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        /* ─── Section Divider ─── */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+        }
+
+        /* ─── Input Focus ─── */
+        .input-focus:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 antialiased">
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 1: HERO
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="hero-gradient min-h-screen flex items-center relative" id="hero">
+        <div class="grid-overlay"></div>
+
+        <div class="container mx-auto px-6 lg:px-16 relative z-10 py-20">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8" data-aos="fade-down"
+                    data-aos-duration="600">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span class="text-slate-300 text-xs font-medium tracking-wider uppercase">UK-based · Operating in
+                        UAE</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.1] mb-6"
+                    data-aos="fade-up" data-aos-duration="800">
+                    British Cloud Standards.
+                    <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Built for
+                        Dubai Enterprises.</span>
+                </h1>
+
+                <!-- Sub-headline -->
+                <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl" data-aos="fade-up"
+                    data-aos-delay="200" data-aos-duration="800">
+                    Secure Cloud Migration & DevOps Services. <strong class="text-white">Reduce IT costs by 30%</strong>
+                    with a trusted UK partner operating in the UAE.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400"
+                    data-aos-duration="800">
+                    <a href="#audit"
+                        class="btn-glow inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white font-bold text-sm tracking-wider uppercase rounded-lg shadow-lg">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Get Free Audit
+                    </a>
+                    <a href="https://wa.me/40751750283?text=Hi%20WYK%20Cloud%2C%20I'm%20interested%20in%20your%20cloud%20services%20for%20my%20business%20in%20Dubai."
+                        target="_blank" rel="noopener"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 text-white font-semibold text-sm tracking-wider uppercase rounded-lg hover:bg-white/10 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Micro trust signals -->
+                <div class="flex flex-wrap gap-6 mt-12 text-xs text-slate-400" data-aos="fade-up" data-aos-delay="600"
+                    data-aos-duration="800">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-shield-check text-green-400"></i>
+                        <span>GDPR Compliant</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-certificate text-amber-400"></i>
+                        <span>ISO Certified Standards</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-headset text-sky-400"></i>
+                        <span>24/7 Enterprise Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative right-side element -->
+        <div class="hidden lg:block absolute right-0 top-0 bottom-0 w-1/3 pointer-events-none">
+            <div
+                class="absolute top-1/2 right-16 -translate-y-1/2 w-72 h-72 border border-white/5 rounded-3xl rotate-12">
+            </div>
+            <div
+                class="absolute top-1/2 right-24 -translate-y-1/2 w-56 h-56 border border-white/5 rounded-3xl -rotate-6">
+            </div>
+            <div class="absolute top-1/3 right-32 w-3 h-3 bg-orange-400/30 rounded-full"></div>
+            <div class="absolute bottom-1/3 right-20 w-4 h-4 bg-sky-400/20 rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 2: TRUST INDICATORS
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="py-16 lg:py-20 bg-white" id="trust">
+        <div class="container mx-auto px-6 lg:px-16">
+            <!-- Section Header -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Why Choose Us</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">
+                    Bringing UK Reliability to the Middle East
+                </h2>
+            </div>
+
+            <!-- Trusted By Logos -->
+            <div class="mb-14" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-center text-sm text-slate-400 uppercase tracking-widest mb-6 font-medium">Trusted By
+                    Industry Leaders</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+                    <div class="logo-placeholder">Client Logo</div>
+                    <div class="logo-placeholder">Client Logo</div>
+                    <div class="logo-placeholder">Client Logo</div>
+                    <div class="logo-placeholder">Client Logo</div>
+                    <div class="logo-placeholder">Client Logo</div>
+                </div>
+            </div>
+
+            <div class="section-divider mb-14"></div>
+
+            <!-- Trust Badges -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- GDPR -->
+                <div class="trust-card rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-shield-halved text-2xl text-navy-700"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">GDPR Compliant</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Full compliance with EU data protection
+                        regulations, ensuring your data remains secure and private.</p>
+                </div>
+
+                <!-- ISO -->
+                <div class="trust-card rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-certificate text-2xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">ISO Certified Standards</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">We follow internationally recognized quality and
+                        security management frameworks for every engagement.</p>
+                </div>
+
+                <!-- 24/7 -->
+                <div class="trust-card rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-headset text-2xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">24/7 Support</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Round-the-clock enterprise support spanning UK and
+                        UAE time zones. We're always online when you need us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 3: PROBLEM & SOLUTION
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="py-16 lg:py-24 bg-slate-50" id="solutions">
+        <div class="container mx-auto px-6 lg:px-16">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Challenges We Solve</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">
+                    Your Problems. Our Solutions.
+                </h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">We understand the unique challenges Dubai enterprises
+                    face when migrating to the cloud.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Problem/Solution 1 -->
+                <div class="ps-card p-8 lg:p-10" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Problem -->
+                    <div class="flex items-start gap-4 mb-6">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mt-0.5">
+                            <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-red-500 font-bold uppercase tracking-wider mb-1">Problem</p>
+                            <p class="text-navy-900 font-semibold">High latency and data security risks with
+                                international hosting?</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-px bg-slate-100 my-4"></div>
+
+                    <!-- Solution -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mt-0.5">
+                            <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-emerald-600 font-bold uppercase tracking-wider mb-1">Solution</p>
+                            <p class="text-slate-600">Local <strong class="text-navy-900">UAE Data Residency
+                                    support</strong> combined with UK-standard security protocols. Low-latency access
+                                with enterprise-grade protection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem/Solution 2 -->
+                <div class="ps-card p-8 lg:p-10" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Problem -->
+                    <div class="flex items-start gap-4 mb-6">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mt-0.5">
+                            <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-red-500 font-bold uppercase tracking-wider mb-1">Problem</p>
+                            <p class="text-navy-900 font-semibold">Unpredictable cloud bills eating into your margins?
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-px bg-slate-100 my-4"></div>
+
+                    <!-- Solution -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mt-0.5">
+                            <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-emerald-600 font-bold uppercase tracking-wider mb-1">Solution</p>
+                            <p class="text-slate-600"><strong class="text-navy-900">Fixed-cost managed DevOps.</strong>
+                                Predictable monthly pricing with transparent billing — no surprises, no hidden fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 4: FULL SERVICES CATALOGUE
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="py-16 lg:py-24 bg-white" id="services">
+        <div class="container mx-auto px-6 lg:px-16">
+            <div class="text-center mb-6" data-aos="fade-up">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">What We Deliver</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">
+                    Full-Spectrum Enterprise Services
+                </h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">From cloud infrastructure to intelligent automation —
+                    everything your Dubai enterprise needs under one trusted UK partner.</p>
+            </div>
+
+            <!-- Row 1: Core Cloud Services -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+
+                <!-- 1. Cloud Native Infrastructure -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-cloud-bolt text-xl text-sky-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Cloud Native Infrastructure</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Infinite scalability with zero maintenance
+                        overhead. Serverless functions and container orchestration built for performance.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>AWS, Azure & Google Cloud deployments</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Kubernetes & Docker orchestration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Auto-scaling & load-balancing</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>UAE region data residency</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span
+                            class="text-[10px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full">AWS</span>
+                        <span
+                            class="text-[10px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full">Azure</span>
+                        <span
+                            class="text-[10px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full">Kubernetes</span>
+                        <span
+                            class="text-[10px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full">Docker</span>
+                    </div>
+                </div>
+
+                <!-- 2. Cloud Migration -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-cloud-arrow-up text-xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Cloud Migration</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Seamless move to AWS/Azure with zero
+                        downtime. We handle the complexity so you can focus on growth.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Lift-and-shift & re-platforming strategies</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Zero-downtime migration windows</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Cost & performance optimization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Post-migration 24/7 monitoring</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span
+                            class="text-[10px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">Terraform</span>
+                        <span
+                            class="text-[10px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">CloudFormation</span>
+                        <span
+                            class="text-[10px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">Oracle</span>
+                    </div>
+                </div>
+
+                <!-- 3. DevOps & Automation -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-gears text-xl text-violet-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">DevOps & Automation</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">CI/CD pipelines that speed up your releases.
+                        Infrastructure as Code for repeatable, reliable deployments.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>CI/CD pipeline setup & management</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Infrastructure as Code (IaC)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Automated testing & quality gates</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Fixed-cost managed DevOps plans</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span
+                            class="text-[10px] font-semibold text-violet-700 bg-violet-50 px-2 py-0.5 rounded-full">GitHub
+                            Actions</span>
+                        <span
+                            class="text-[10px] font-semibold text-violet-700 bg-violet-50 px-2 py-0.5 rounded-full">Jenkins</span>
+                        <span
+                            class="text-[10px] font-semibold text-violet-700 bg-violet-50 px-2 py-0.5 rounded-full">Ansible</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Security, Web, AI -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+
+                <!-- 4. Cyber-Resilient Security -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-user-shield text-xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Cyber-Resilient Security</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Zero-Trust architecture implementation.
+                        AI-driven threat detection to protect your data fortress.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Penetration testing & vulnerability audits</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Zero-Trust architecture design</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>GDPR & UAE data compliance</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>24/7 threat monitoring & response</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Zero
+                            Trust</span>
+                        <span class="text-[10px] font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Pen
+                            Testing</span>
+                        <span
+                            class="text-[10px] font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Blockchain</span>
+                    </div>
+                </div>
+
+                <!-- 5. Next-Gen Web Ecosystems -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-layer-group text-xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Web Development</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Immersive, app-like experiences delivered via
+                        the web. PWA architectures that perform like native applications.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>React, Next.js & Angular SPAs</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Headless CMS & e-commerce platforms</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>API-first microservices architecture</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Performance & SEO optimization</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span
+                            class="text-[10px] font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-full">React</span>
+                        <span
+                            class="text-[10px] font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-full">Next.js</span>
+                        <span
+                            class="text-[10px] font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-full">TypeScript</span>
+                        <span
+                            class="text-[10px] font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-full">GraphQL</span>
+                    </div>
+                </div>
+
+                <!-- 6. Intelligent Automation (AI/ML) -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-microchip text-xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">AI & Machine Learning</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Self-learning algorithms that optimize
+                        business logic. From predictive maintenance to NLP bots and GenAI solutions.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Custom LLM & GenAI integrations</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Predictive analytics & forecasting</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>NLP chatbots & process automation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>MLOps pipeline management</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span
+                            class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">Python</span>
+                        <span
+                            class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">TensorFlow</span>
+                        <span
+                            class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">PyTorch</span>
+                        <span
+                            class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">LLMs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Mobile, Data, Design + Legacy -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <!-- 7. Cross-Platform Mobile -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-mobile-screen-button text-xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Mobile App Development</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Native and cross-platform apps for iOS &
+                        Android. High-performance applications with native hardware access.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Flutter & React Native cross-platform</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Native Swift (iOS) & Kotlin (Android)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>App Store & Play Store deployment</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span
+                            class="text-[10px] font-semibold text-orange-700 bg-orange-50 px-2 py-0.5 rounded-full">Flutter</span>
+                        <span
+                            class="text-[10px] font-semibold text-orange-700 bg-orange-50 px-2 py-0.5 rounded-full">React
+                            Native</span>
+                        <span
+                            class="text-[10px] font-semibold text-orange-700 bg-orange-50 px-2 py-0.5 rounded-full">Swift</span>
+                        <span
+                            class="text-[10px] font-semibold text-orange-700 bg-orange-50 px-2 py-0.5 rounded-full">Kotlin</span>
+                    </div>
+                </div>
+
+                <!-- 8. Data Intelligence & Analytics -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-chart-line text-xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Data Intelligence & Analytics</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Turning raw data into crystal-clear strategic
+                        foresight. Real-time pipelines for executive decision-making.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Real-time dashboards & BI tools</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Data warehousing & ETL pipelines</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>SEO analytics & conversion tracking</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span
+                            class="text-[10px] font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full">Power
+                            BI</span>
+                        <span
+                            class="text-[10px] font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full">Tableau</span>
+                        <span
+                            class="text-[10px] font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full">Snowflake</span>
+                        <span
+                            class="text-[10px] font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full">Spark</span>
+                    </div>
+                </div>
+
+                <!-- 9. UI/UX Design & Legacy Modernization -->
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">UI/UX & Legacy Modernization</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Hyper-immersive design interfaces plus
+                        revitalizing obsolete monoliths into agile, cloud-ready microservices.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Figma prototyping & design systems</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Legacy-to-cloud modernization (Strangler Pattern)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>CRM/ERP bespoke enterprise solutions</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span
+                            class="text-[10px] font-semibold text-pink-700 bg-pink-50 px-2 py-0.5 rounded-full">Figma</span>
+                        <span
+                            class="text-[10px] font-semibold text-pink-700 bg-pink-50 px-2 py-0.5 rounded-full">GSAP</span>
+                        <span
+                            class="text-[10px] font-semibold text-pink-700 bg-pink-50 px-2 py-0.5 rounded-full">Django</span>
+                        <span
+                            class="text-[10px] font-semibold text-pink-700 bg-pink-50 px-2 py-0.5 rounded-full">Laravel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="text-center mt-14" data-aos="fade-up">
+                <p class="text-slate-500 mb-5">Need a service not listed here? We tailor solutions to your exact
+                    requirements.</p>
+                <a href="#audit"
+                    class="btn-glow inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white font-bold text-sm tracking-wider uppercase rounded-lg shadow-lg">
+                    <i class="fa-solid fa-comments"></i>
+                    Discuss Your Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 5: FINAL CTA & FOOTER
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="cta-gradient py-20 lg:py-28 relative overflow-hidden" id="audit">
+        <div class="grid-overlay"></div>
+
+        <!-- Decorative -->
+        <div class="absolute top-10 left-10 w-40 h-40 border border-white/5 rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-60 h-60 border border-white/5 rounded-full pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-16 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6"
+                    data-aos="fade-up">
+                    Ready to modernize your infrastructure?
+                </h2>
+                <p class="text-lg text-slate-300 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Let's discuss how we can reduce your cloud costs, improve security, and accelerate your team's
+                    delivery speed.
+                </p>
+
+                <!-- Primary CTA: WhatsApp -->
+                <div class="mb-14" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://wa.me/40751750283?text=Hi%20WYK%20Cloud%2C%20I'm%20interested%20in%20your%20cloud%20services%20for%20my%20business%20in%20Dubai."
+                        target="_blank" rel="noopener"
+                        class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-whatsapp text-white font-bold text-base tracking-wider uppercase rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        Chat on WhatsApp
+                    </a>
+                    <p class="text-slate-400 text-sm mt-4">Typical reply time: under 30 minutes during business hours
+                    </p>
+                </div>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-4 max-w-md mx-auto mb-14">
+                    <div class="flex-1 h-px bg-white/10"></div>
+                    <span class="text-slate-400 text-sm font-medium">or send us a message</span>
+                    <div class="flex-1 h-px bg-white/10"></div>
+                </div>
+
+                <!-- Secondary CTA: Email Form -->
+                <div class="max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <form id="contact-form" class="space-y-4" onsubmit="return handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Your Name" required
+                                class="input-focus w-full px-5 py-3.5 bg-white/10 border border-white/15 rounded-xl text-white placeholder:text-slate-400 text-sm backdrop-blur-sm">
+                            <input type="email" name="email" placeholder="Work Email" required
+                                class="input-focus w-full px-5 py-3.5 bg-white/10 border border-white/15 rounded-xl text-white placeholder:text-slate-400 text-sm backdrop-blur-sm">
+                        </div>
+                        <input type="text" name="company" placeholder="Company Name"
+                            class="input-focus w-full px-5 py-3.5 bg-white/10 border border-white/15 rounded-xl text-white placeholder:text-slate-400 text-sm backdrop-blur-sm">
+                        <button type="submit"
+                            class="btn-glow w-full px-8 py-4 bg-accent text-white font-bold text-sm tracking-wider uppercase rounded-xl shadow-lg">
+                            <i class="fa-solid fa-paper-plane mr-2"></i>
+                            Request Free Audit
+                        </button>
+                    </form>
+                    <p class="text-slate-500 text-xs mt-4">We'll respond within 24 hours. No spam. No obligations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── MINIMAL FOOTER ─── -->
+    <footer class="bg-navy-950 py-8">
+        <div class="container mx-auto px-6 lg:px-16">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-cloud text-xl text-sky-400"></i>
+                    <span class="text-white font-bold tracking-wider">WYK<span class="text-sky-400">CLOUD</span></span>
+                </div>
+                <p class="text-slate-500 text-xs text-center">
+                    &copy; 2025 WYK Cloud UK &middot; 13 Barring Street, Northampton, NN5 4DD, United Kingdom
+                </p>
+                <a href="#" class="text-slate-500 hover:text-white text-xs transition-colors">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── FLOATING WHATSAPP BUTTON ─── -->
+    <a href="https://wa.me/40751750283?text=Hi%20WYK%20Cloud%2C%20I'm%20interested%20in%20your%20cloud%20services%20for%20my%20business%20in%20Dubai."
+        target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- ─── SCRIPTS ─── -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 80,
+            duration: 700,
+            easing: 'ease-out-cubic',
+        });
+
+        // Simple form handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.querySelector('[name="name"]').value;
+            const email = form.querySelector('[name="email"]').value;
+            const company = form.querySelector('[name="company"]').value;
+
+            // Compose WhatsApp message with form data
+            const message = encodeURIComponent(
+                `Hi WYK Cloud,\n\nI'd like to request a free cloud audit.\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}`
+            );
+            window.open(`https://wa.me/40751750283?text=${message}`, '_blank');
+
+            // Show confirmation
+            const btn = form.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Opening WhatsApp...';
+            btn.classList.remove('bg-accent');
+            btn.classList.add('bg-emerald-500');
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Request Free Audit';
+                btn.classList.remove('bg-emerald-500');
+                btn.classList.add('bg-accent');
+                form.reset();
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>

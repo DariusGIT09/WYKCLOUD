@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WYK Cloud — Enterprise Cloud & DevOps for UAE Businesses</title>
+    <meta name="description"
+        content="WYK Cloud: UK-based enterprise cloud agency. Secure Cloud Migration, DevOps & AI services for Dubai and UAE businesses. Reduce IT costs by 30%.">
+    <link rel="canonical" href="https://wykcloud.co.uk/uae">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wykcloud.co.uk/uae">
+    <meta property="og:title" content="WYK Cloud — British Cloud Standards. Built for Dubai Enterprises.">
+    <meta property="og:description"
+        content="Secure Cloud Migration & DevOps Services. Reduce IT costs by 30% with a trusted UK partner operating in the UAE.">
+    <meta property="og:image" content="https://wykcloud.co.uk/Public/WykCloud.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Public/Favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="Public/Favicon/apple-touch-icon.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Fonts: Orbitron + Rajdhani (matching main site) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Shared Site Styles -->
+    <link rel="stylesheet" href="styles.css?v=2.0">
+
+    <style>
+        /* ─── UAE Landing Page Specifics ─── */
+
+        /* Hero gradient overlay matching cosmic night */
+        .uae-hero {
+            background: linear-gradient(135deg, #050b14 0%, #0a1929 40%, #0f2137 70%, #050b14 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .uae-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .uae-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(112, 0, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Grid overlay matching main site */
+        .uae-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        /* Service card — dark glassmorphism style */
+        .uae-service-card {
+            background: rgba(17, 25, 40, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .uae-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .uae-service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .uae-service-card:hover {
+            border-color: rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.08), 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+        }
+
+        /* Trust card */
+        .uae-trust-card {
+            background: rgba(17, 25, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .uae-trust-card:hover {
+            border-color: rgba(0, 240, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Problem/Solution card */
+        .uae-ps-card {
+            background: rgba(17, 25, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .uae-ps-card:hover {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.06);
+            transform: translateY(-3px);
+        }
+
+        /* CTA section */
+        .uae-cta {
+            background: linear-gradient(135deg, #050b14 0%, #0a1929 50%, #0f2137 100%);
+        }
+
+        /* Badge pill */
+        .uae-badge-pill {
+            background: rgba(0, 240, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        /* WhatsApp float */
+        .uae-wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: uae-pulse-wa 2s infinite;
+        }
+
+        .uae-wa-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes uae-pulse-wa {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        /* CTA button glow — cyan accent */
+        .uae-btn-glow {
+            transition: all 0.3s ease;
+        }
+
+        .uae-btn-glow:hover {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Tech tag */
+        .tech-tag {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            background: rgba(0, 240, 255, 0.08);
+            color: #67e8f9;
+            border: 1px solid rgba(0, 240, 255, 0.15);
+        }
+
+        /* Input focus */
+        .uae-input:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.15);
+        }
+
+        /* Section divider */
+        .uae-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.2), transparent);
+        }
+
+        /* Logo placeholder */
+        .uae-logo-ph {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px dashed rgba(0, 240, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            color: #475569;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            font-family: 'Rajdhani', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- ─── NAVIGATION (matching main site) ─── -->
+    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 cursor-pointer group">
+                <i class="fa-solid fa-cloud text-3xl text-cyan-400 group-hover:animate-pulse"></i>
+                <span class="text-2xl font-bold tracking-widest text-white brand-font">WYK<span
+                        class="text-cyan-400">CLOUD</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors uppercase">Home</a>
+                <a href="about.html" class="hover:text-cyan-400 transition-colors uppercase">About Us</a>
+                <a href="services.html" class="hover:text-cyan-400 transition-colors uppercase">Services</a>
+                <a href="portfolio.html" class="hover:text-cyan-400 transition-colors uppercase">Missions</a>
+                <a href="contact.html"
+                    class="px-5 py-2 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all rounded-sm uppercase text-xs font-bold tracking-widest shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+                    Contact Us
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-cyan-400 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full glass-nav border-t border-slate-700/50 p-6 flex flex-col space-y-4 shadow-2xl transition-all duration-300">
+            <a href="index.html"
+                class="text-white hover:text-cyan-400 uppercase font-bold tracking-wider transition-colors">Home</a>
+            <a href="about.html"
+                class="text-white hover:text-cyan-400 uppercase font-bold tracking-wider transition-colors">About Us</a>
+            <a href="services.html"
+                class="text-white hover:text-cyan-400 uppercase font-bold tracking-wider transition-colors">Services</a>
+            <a href="portfolio.html"
+                class="text-white hover:text-cyan-400 uppercase font-bold tracking-wider transition-colors">Missions</a>
+            <a href="contact.html"
+                class="text-cyan-400 border border-cyan-400 px-4 py-2 text-center rounded-sm uppercase font-bold tracking-widest hover:bg-cyan-400 hover:text-black transition-colors">Contact
+                Us</a>
+        </div>
+    </nav>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 1: HERO
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="uae-hero min-h-screen flex items-center relative pt-20" id="hero">
+        <div class="uae-grid-overlay"></div>
+
+        <div class="container mx-auto px-6 lg:px-16 relative z-10 py-20">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="uae-badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
+                    data-aos="fade-down" data-aos-duration="600">
+                    <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+                    <span class="text-slate-300 text-xs font-semibold tracking-[0.15em] uppercase"
+                        style="font-family: 'Rajdhani', sans-serif;">UK-based · Operating in UAE</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-6 brand-font tracking-tight"
+                    data-aos="fade-up" data-aos-duration="800">
+                    BRITISH CLOUD
+                    <br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 neon-text-cyan">STANDARDS.</span>
+                    <br>
+                    <span class="text-slate-300 text-3xl sm:text-4xl lg:text-5xl font-bold">Built for Dubai
+                        Enterprises.</span>
+                </h1>
+
+                <!-- Sub-headline -->
+                <p class="text-lg sm:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl" data-aos="fade-up"
+                    data-aos-delay="200" data-aos-duration="800">
+                    Secure Cloud Migration & DevOps Services. <strong class="text-white">Reduce IT costs by 30%</strong>
+                    with a trusted UK partner operating in the UAE.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400"
+                    data-aos-duration="800">
+                    <a href="#audit"
+                        class="uae-btn-glow inline-flex items-center justify-center gap-2 px-8 py-4 bg-cyan-500 text-black font-bold text-sm tracking-widest uppercase shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Get Free Audit
+                    </a>
+                    <a href="https://wa.me/40751750283?text=Hi%20WYK%20Cloud%2C%20I'm%20interested%20in%20your%20cloud%20services%20for%20my%20business%20in%20Dubai."
+                        target="_blank" rel="noopener"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-cyan-400/40 text-cyan-400 font-semibold text-sm tracking-wider uppercase hover:bg-cyan-400/10 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Micro trust signals -->
+                <div class="flex flex-wrap gap-6 mt-12 text-xs text-slate-500" data-aos="fade-up" data-aos-delay="600"
+                    data-aos-duration="800" style="font-family: 'Rajdhani', sans-serif;">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-shield-check text-cyan-500"></i>
+                        <span class="tracking-wider uppercase font-semibold">GDPR Compliant</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-certificate text-purple-400"></i>
+                        <span class="tracking-wider uppercase font-semibold">ISO Certified</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-headset text-cyan-400"></i>
+                        <span class="tracking-wider uppercase font-semibold">24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative right-side element -->
+        <div class="hidden lg:block absolute right-0 top-0 bottom-0 w-1/3 pointer-events-none">
+            <div
+                class="absolute top-1/2 right-16 -translate-y-1/2 w-72 h-72 border border-cyan-500/10 rounded-3xl rotate-12">
+            </div>
+            <div
+                class="absolute top-1/2 right-24 -translate-y-1/2 w-56 h-56 border border-purple-500/10 rounded-3xl -rotate-6">
+            </div>
+            <div class="absolute top-1/3 right-32 w-3 h-3 bg-cyan-400/30 rounded-full animate-pulse"></div>
+            <div class="absolute bottom-1/3 right-20 w-4 h-4 bg-purple-500/20 rounded-full animate-pulse"></div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 2: TRUST INDICATORS
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="py-16 lg:py-20 relative" style="background: #050b14;" id="trust">
+        <div class="container mx-auto px-6 lg:px-16">
+            <!-- Section Header -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="text-cyan-400 font-bold tracking-widest uppercase text-sm">Why Choose Us</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 brand-font">
+                    BRINGING <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">UK
+                        RELIABILITY</span>
+                    <br>TO THE MIDDLE EAST
+                </h2>
+            </div>
+
+            <!-- Trusted By Logos -->
+            <div class="mb-14" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-center text-xs text-slate-600 uppercase tracking-[0.2em] mb-6 font-semibold"
+                    style="font-family: 'Rajdhani', sans-serif;">Trusted By Industry Leaders</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+                    <div class="uae-logo-ph">Client Logo</div>
+                    <div class="uae-logo-ph">Client Logo</div>
+                    <div class="uae-logo-ph">Client Logo</div>
+                    <div class="uae-logo-ph">Client Logo</div>
+                    <div class="uae-logo-ph">Client Logo</div>
+                </div>
+            </div>
+
+            <div class="uae-divider mb-14"></div>
+
+            <!-- Trust Badges -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- GDPR -->
+                <div class="uae-trust-card p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-cyan-900/30 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-cyan-500/20">
+                        <i class="fa-solid fa-shield-halved text-2xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">GDPR COMPLIANT</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Full compliance with EU data protection
+                        regulations, ensuring your data remains secure and private.</p>
+                </div>
+
+                <!-- ISO -->
+                <div class="uae-trust-card p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-purple-500/20">
+                        <i class="fa-solid fa-certificate text-2xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">ISO CERTIFIED</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Internationally recognized quality and security
+                        management frameworks for every engagement.</p>
+                </div>
+
+                <!-- 24/7 -->
+                <div class="uae-trust-card p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-16 h-16 bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-green-500/20">
+                        <i class="fa-solid fa-headset text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">24/7 SUPPORT</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Round-the-clock enterprise support spanning UK and
+                        UAE time zones. Always online when you need us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 3: PROBLEM & SOLUTION
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="py-16 lg:py-24 relative" style="background: #0a1120;" id="solutions">
+        <div class="uae-grid-overlay"></div>
+        <div class="container mx-auto px-6 lg:px-16 relative z-10">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <span class="text-cyan-400 font-bold tracking-widest uppercase text-sm">Challenges We Solve</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 brand-font">
+                    YOUR PROBLEMS. <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">OUR
+                        SOLUTIONS.</span>
+                </h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">We understand the unique challenges Dubai enterprises
+                    face when migrating to the cloud.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Problem/Solution 1 -->
+                <div class="uae-ps-card p-8 lg:p-10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 bg-red-900/30 rounded-xl flex items-center justify-center mt-0.5 border border-red-500/20">
+                            <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-red-400 font-bold uppercase tracking-wider mb-1"
+                                style="font-family: 'Rajdhani', sans-serif;">Problem</p>
+                            <p class="text-white font-semibold">High latency and data security risks with international
+                                hosting?</p>
+                        </div>
+                    </div>
+                    <div class="w-full h-px bg-slate-700/50 my-4"></div>
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 bg-cyan-900/30 rounded-xl flex items-center justify-center mt-0.5 border border-cyan-500/20">
+                            <i class="fa-solid fa-check-circle text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-cyan-400 font-bold uppercase tracking-wider mb-1"
+                                style="font-family: 'Rajdhani', sans-serif;">Solution</p>
+                            <p class="text-slate-400">Local <strong class="text-white">UAE Data Residency
+                                    support</strong> combined with UK-standard security protocols. Low-latency access
+                                with enterprise-grade protection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem/Solution 2 -->
+                <div class="uae-ps-card p-8 lg:p-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 bg-red-900/30 rounded-xl flex items-center justify-center mt-0.5 border border-red-500/20">
+                            <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-red-400 font-bold uppercase tracking-wider mb-1"
+                                style="font-family: 'Rajdhani', sans-serif;">Problem</p>
+                            <p class="text-white font-semibold">Unpredictable cloud bills eating into your margins?</p>
+                        </div>
+                    </div>
+                    <div class="w-full h-px bg-slate-700/50 my-4"></div>
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 bg-cyan-900/30 rounded-xl flex items-center justify-center mt-0.5 border border-cyan-500/20">
+                            <i class="fa-solid fa-check-circle text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-cyan-400 font-bold uppercase tracking-wider mb-1"
+                                style="font-family: 'Rajdhani', sans-serif;">Solution</p>
+                            <p class="text-slate-400"><strong class="text-white">Fixed-cost managed DevOps.</strong>
+                                Predictable monthly pricing with transparent billing — no surprises, no hidden fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 4: FULL SERVICES CATALOGUE
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="py-16 lg:py-24 relative overflow-hidden" style="background: #050b14;" id="services">
+        <!-- Background Grid -->
+        <div class="absolute inset-0 z-0 opacity-10"
+            style="background-image: linear-gradient(#00f0ff 1px, transparent 1px), linear-gradient(90deg, #00f0ff 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-16 relative z-10">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <span class="text-cyan-400 font-bold tracking-widest uppercase text-sm">What We Deliver</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 brand-font">
+                    FULL-SPECTRUM <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">ENTERPRISE</span>
+                    SERVICES
+                </h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">From cloud infrastructure to intelligent automation —
+                    everything your Dubai enterprise needs under one trusted UK partner.</p>
+            </div>
+
+            <!-- Row 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+
+                <!-- 1. Cloud Native Infrastructure -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-5 border border-cyan-500/20">
+                        <i class="fa-solid fa-cloud-bolt text-xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">Cloud Infrastructure</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Infinite scalability with zero maintenance
+                        overhead. Serverless & container orchestration built for performance.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>AWS, Azure & Google Cloud</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Kubernetes & Docker orchestration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Auto-scaling & load-balancing</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>UAE region data residency</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <!-- 2. Cloud Migration -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-blue-900/30 rounded-lg flex items-center justify-center mb-5 border border-blue-500/20">
+                        <i class="fa-solid fa-cloud-arrow-up text-xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">Cloud Migration</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Seamless move to AWS/Azure with zero
+                        downtime. We handle the complexity so you can focus on growth.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Lift-and-shift & re-platforming</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Zero-downtime migration windows</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Cost & performance optimization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Post-migration 24/7 monitoring</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">CloudFormation</span>
+                        <span class="tech-tag">Oracle</span>
+                    </div>
+                </div>
+
+                <!-- 3. DevOps & Automation -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 bg-purple-900/30 rounded-lg flex items-center justify-center mb-5 border border-purple-500/20">
+                        <i class="fa-solid fa-gears text-xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">DevOps & Automation</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">CI/CD pipelines that speed up releases.
+                        Infrastructure as Code for repeatable, reliable deployments.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>CI/CD pipeline setup & management</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Infrastructure as Code (IaC)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Automated testing & quality gates</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Fixed-cost managed DevOps plans</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">Ansible</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+
+                <!-- 4. Cyber Security -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-green-900/30 rounded-lg flex items-center justify-center mb-5 border border-green-500/20">
+                        <i class="fa-solid fa-user-shield text-xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">Cyber Security</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Zero-Trust architecture. AI-driven threat
+                        detection to protect your data fortress.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Pen testing & vulnerability audits</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Zero-Trust architecture design</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>GDPR & UAE data compliance</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>24/7 threat monitoring & response</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">Zero Trust</span>
+                        <span class="tech-tag">Pen Testing</span>
+                        <span class="tech-tag">Blockchain</span>
+                    </div>
+                </div>
+
+                <!-- 5. Web Development -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-pink-900/30 rounded-lg flex items-center justify-center mb-5 border border-pink-500/20">
+                        <i class="fa-solid fa-code text-xl text-pink-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">Web Development</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Immersive, app-like experiences via the web.
+                        PWA architectures that perform like native apps.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>React, Next.js & Angular SPAs</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Headless CMS & e-commerce</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>API-first microservices</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Performance & SEO optimization</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">GraphQL</span>
+                    </div>
+                </div>
+
+                <!-- 6. AI & ML -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 bg-yellow-900/30 rounded-lg flex items-center justify-center mb-5 border border-yellow-500/20">
+                        <i class="fa-solid fa-brain text-xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">AI & Machine Learning</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Self-learning algorithms that optimize
+                        business logic. Predictive analytics to GenAI solutions.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Custom LLM & GenAI integrations</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Predictive analytics & forecasting</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>NLP chatbots & process automation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>MLOps pipeline management</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">LLMs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <!-- 7. Mobile Apps -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-orange-900/30 rounded-lg flex items-center justify-center mb-5 border border-orange-500/20">
+                        <i class="fa-solid fa-mobile-screen text-xl text-orange-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">Mobile Apps</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Native and cross-platform apps for iOS &
+                        Android. High-performance with native hardware access.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Flutter & React Native</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Native Swift (iOS) & Kotlin (Android)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>App Store & Play Store deployment</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Kotlin</span>
+                    </div>
+                </div>
+
+                <!-- 8. Data Analytics -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-indigo-900/30 rounded-lg flex items-center justify-center mb-5 border border-indigo-500/20">
+                        <i class="fa-solid fa-chart-line text-xl text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">Data Intelligence</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Turning raw data into strategic foresight.
+                        Real-time pipelines for executive decision-making.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Real-time dashboards & BI tools</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Data warehousing & ETL pipelines</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>SEO analytics & conversion tracking</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">Spark</span>
+                    </div>
+                </div>
+
+                <!-- 9. UI/UX & Legacy -->
+                <div class="uae-service-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 bg-rose-900/30 rounded-lg flex items-center justify-center mb-5 border border-rose-500/20">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xl text-rose-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 brand-font">UI/UX & Modernization</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Hyper-immersive design plus revitalizing
+                        obsolete monoliths into agile, cloud-ready microservices.</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Figma prototyping & design systems</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>Legacy-to-cloud modernization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 text-xs mt-1 flex-shrink-0"></i>
+                            <span>CRM/ERP bespoke solutions</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">GSAP</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Laravel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="text-center mt-14" data-aos="fade-up">
+                <p class="text-slate-500 mb-5">Need a service not listed here? We tailor solutions to your exact
+                    requirements.</p>
+                <a href="#audit"
+                    class="uae-btn-glow inline-flex items-center justify-center gap-2 px-8 py-4 bg-cyan-500 text-black font-bold text-sm tracking-widest uppercase shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                    <i class="fa-solid fa-comments"></i>
+                    Discuss Your Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         SECTION 5: FINAL CTA & FOOTER
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="uae-cta py-20 lg:py-28 relative overflow-hidden" id="audit">
+        <div class="uae-grid-overlay"></div>
+
+        <!-- Decorative -->
+        <div class="absolute top-10 left-10 w-40 h-40 border border-cyan-500/10 rounded-full pointer-events-none">
+        </div>
+        <div class="absolute bottom-10 right-10 w-60 h-60 border border-purple-500/10 rounded-full pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-16 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6 brand-font"
+                    data-aos="fade-up">
+                    READY TO <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 neon-text-cyan">MODERNIZE</span>
+                    <br>YOUR INFRASTRUCTURE?
+                </h2>
+                <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Let's discuss how we can reduce your cloud costs, improve security, and accelerate your team's
+                    delivery speed.
+                </p>
+
+                <!-- Primary CTA: WhatsApp -->
+                <div class="mb-14" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://wa.me/40751750283?text=Hi%20WYK%20Cloud%2C%20I'm%20interested%20in%20your%20cloud%20services%20for%20my%20business%20in%20Dubai."
+                        target="_blank" rel="noopener"
+                        class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#25D366] text-white font-bold text-base tracking-wider uppercase rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        Chat on WhatsApp
+                    </a>
+                    <p class="text-slate-500 text-sm mt-4">Typical reply time: under 30 minutes during business hours
+                    </p>
+                </div>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-4 max-w-md mx-auto mb-14">
+                    <div class="flex-1 h-px bg-slate-700/50"></div>
+                    <span class="text-slate-500 text-sm font-medium" style="font-family: 'Rajdhani', sans-serif;">or
+                        send us a message</span>
+                    <div class="flex-1 h-px bg-slate-700/50"></div>
+                </div>
+
+                <!-- Secondary CTA: Email Form -->
+                <div class="max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <form id="contact-form" class="space-y-4" onsubmit="return handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Your Name" required
+                                class="uae-input w-full px-5 py-3.5 bg-slate-900/80 border border-slate-700/50 rounded-xl text-white placeholder:text-slate-500 text-sm backdrop-blur-sm">
+                            <input type="email" name="email" placeholder="Work Email" required
+                                class="uae-input w-full px-5 py-3.5 bg-slate-900/80 border border-slate-700/50 rounded-xl text-white placeholder:text-slate-500 text-sm backdrop-blur-sm">
+                        </div>
+                        <input type="text" name="company" placeholder="Company Name"
+                            class="uae-input w-full px-5 py-3.5 bg-slate-900/80 border border-slate-700/50 rounded-xl text-white placeholder:text-slate-500 text-sm backdrop-blur-sm">
+                        <button type="submit"
+                            class="uae-btn-glow w-full px-8 py-4 bg-cyan-500 text-black font-bold text-sm tracking-widest uppercase shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                            <i class="fa-solid fa-paper-plane mr-2"></i>
+                            Request Free Audit
+                        </button>
+                    </form>
+                    <p class="text-slate-600 text-xs mt-4">We'll respond within 24 hours. No spam. No obligations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER (shared component) ─── -->
+    <script src="footer.js"></script>
+    <wyk-footer></wyk-footer>
+
+    <!-- ─── FLOATING WHATSAPP BUTTON ─── -->
+    <a href="https://wa.me/40751750283?text=Hi%20WYK%20Cloud%2C%20I'm%20interested%20in%20your%20cloud%20services%20for%20my%20business%20in%20Dubai."
+        target="_blank" rel="noopener" class="uae-wa-float" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- ─── SCRIPTS ─── -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 80,
+            duration: 700,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Form handler → WhatsApp redirect
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.querySelector('[name="name"]').value;
+            const email = form.querySelector('[name="email"]').value;
+            const company = form.querySelector('[name="company"]').value;
+
+            const message = encodeURIComponent(
+                `Hi WYK Cloud,\n\nI'd like to request a free cloud audit.\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}`
+            );
+            window.open(`https://wa.me/40751750283?text=${message}`, '_blank');
+
+            const btn = form.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Opening WhatsApp...';
+            btn.classList.remove('bg-cyan-500');
+            btn.classList.add('bg-green-500');
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Request Free Audit';
+                btn.classList.remove('bg-green-500');
+                btn.classList.add('bg-cyan-500');
+                form.reset();
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
