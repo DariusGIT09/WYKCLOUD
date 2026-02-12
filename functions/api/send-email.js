@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 export async function onRequestPost(context) {
     try {
         // Parse the request body (email and message from frontend)
-        const { user_name, company, user_email, contact_number, interest, budget, message } = await context.request.json();
+        const { user_name, company, user_email, contact_number, interest, message } = await context.request.json();
 
         // Initialize Resend with the API key from environment variables
         // IMPORTANT: The user must set RESEND_API_KEY in Cloudflare Pages settings
@@ -67,10 +67,7 @@ export async function onRequestPost(context) {
                                 <span style="color: #7000ff; font-family: 'Orbitron', 'Segoe UI', sans-serif; font-size: 12px; letter-spacing: 1px; font-weight: bold; text-transform: uppercase;">Interest:</span>
                                 <span style="color: #ffffff; font-weight: 600;">${interest}</span>
                             </p>
-                            <p style="margin: 8px 0; color: #cbd5e1; font-size: 16px;">
-                                <span style="color: #7000ff; font-family: 'Orbitron', 'Segoe UI', sans-serif; font-size: 12px; letter-spacing: 1px; font-weight: bold; text-transform: uppercase;">Budget:</span>
-                                <span style="color: #ffffff; font-weight: 600;">${budget}</span>
-                            </p>
+
                         </div>
 
                         <p style="font-family: 'Orbitron', 'Segoe UI', sans-serif; font-size: 12px; color: #94a3b8; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">

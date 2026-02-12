@@ -248,55 +248,24 @@
 
 <body class="antialiased selection:bg-cyan-500 selection:text-white">
 
-    <!-- ─── NAVIGATION (matching main site) ─── -->
-    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2 cursor-pointer group">
-                <i class="fa-solid fa-cloud text-3xl text-cyan-400 group-hover:animate-pulse"></i>
-                <span class="text-2xl font-bold tracking-widest text-white brand-font">WYK<span
-                        class="text-cyan-400">CLOUD</span></span>
-            </a>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider">
-                <a href="index.html" class="hover:text-cyan-400 transition-colors uppercase">Home</a>
-                <a href="about.html" class="hover:text-cyan-400 transition-colors uppercase">About Us</a>
-                <a href="services.html" class="hover:text-cyan-400 transition-colors uppercase">Services</a>
-                <a href="portfolio.html" class="hover:text-cyan-400 transition-colors uppercase">Missions</a>
-                <a href="contact.html"
-                    class="px-5 py-2 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all rounded-sm uppercase text-xs font-bold tracking-widest shadow-[0_0_10px_rgba(0,240,255,0.2)]">
-                    Contact Us
-                </a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-cyan-400 text-2xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 w-full glass-nav border-t border-slate-700/50 p-6 flex flex-col space-y-4 shadow-2xl transition-all duration-300">
-            <a href="index.html"
-                class="text-white hover:text-cyan-400 uppercase font-bold tracking-wider transition-colors">Home</a>
-            <a href="about.html"
-                class="text-white hover:text-cyan-400 uppercase font-bold tracking-wider transition-colors">About Us</a>
-            <a href="services.html"
-                class="text-white hover:text-cyan-400 uppercase font-bold tracking-wider transition-colors">Services</a>
-            <a href="portfolio.html"
-                class="text-white hover:text-cyan-400 uppercase font-bold tracking-wider transition-colors">Missions</a>
-            <a href="contact.html"
-                class="text-cyan-400 border border-cyan-400 px-4 py-2 text-center rounded-sm uppercase font-bold tracking-widest hover:bg-cyan-400 hover:text-black transition-colors">Contact
-                Us</a>
-        </div>
-    </nav>
+    <!-- No navigation — landing page focused on conversion -->
 
     <!-- ════════════════════════════════════════════════════════════════
          SECTION 1: HERO
          ════════════════════════════════════════════════════════════════ -->
-    <section class="uae-hero min-h-screen flex items-center relative pt-20" id="hero">
+    <section class="uae-hero min-h-screen flex items-center relative" id="hero">
         <div class="uae-grid-overlay"></div>
 
         <div class="container mx-auto px-6 lg:px-16 relative z-10 py-20">
             <div class="max-w-3xl">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 mb-4 w-fit group" data-aos="fade-down"
+                    data-aos-duration="500">
+                    <i class="fa-solid fa-cloud text-3xl text-cyan-400 group-hover:animate-pulse"></i>
+                    <span class="text-2xl font-bold tracking-widest text-white brand-font">WYK<span
+                            class="text-cyan-400">CLOUD</span></span>
+                </a>
+
                 <!-- Badge -->
                 <div class="uae-badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
                     data-aos="fade-down" data-aos-duration="600">
@@ -387,20 +356,6 @@
                 </h2>
             </div>
 
-            <!-- Trusted By Logos -->
-            <div class="mb-14" data-aos="fade-up" data-aos-delay="100">
-                <p class="text-center text-xs text-slate-600 uppercase tracking-[0.2em] mb-6 font-semibold"
-                    style="font-family: 'Rajdhani', sans-serif;">Trusted By Industry Leaders</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
-                    <div class="uae-logo-ph">Client Logo</div>
-                    <div class="uae-logo-ph">Client Logo</div>
-                    <div class="uae-logo-ph">Client Logo</div>
-                    <div class="uae-logo-ph">Client Logo</div>
-                    <div class="uae-logo-ph">Client Logo</div>
-                </div>
-            </div>
-
-            <div class="uae-divider mb-14"></div>
 
             <!-- Trust Badges -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -912,19 +867,31 @@
 
                 <!-- Secondary CTA: Email Form -->
                 <div class="max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="300">
-                    <form id="contact-form" class="space-y-4" onsubmit="return handleFormSubmit(event)">
+                    <form id="contact-form" class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <input type="text" name="name" placeholder="Your Name" required
+                            <input type="text" name="user_name" placeholder="Your Name" required
                                 class="uae-input w-full px-5 py-3.5 bg-slate-900/80 border border-slate-700/50 rounded-xl text-white placeholder:text-slate-500 text-sm backdrop-blur-sm">
-                            <input type="email" name="email" placeholder="Work Email" required
+                            <input type="email" name="user_email" placeholder="Work Email" required
                                 class="uae-input w-full px-5 py-3.5 bg-slate-900/80 border border-slate-700/50 rounded-xl text-white placeholder:text-slate-500 text-sm backdrop-blur-sm">
                         </div>
                         <input type="text" name="company" placeholder="Company Name"
                             class="uae-input w-full px-5 py-3.5 bg-slate-900/80 border border-slate-700/50 rounded-xl text-white placeholder:text-slate-500 text-sm backdrop-blur-sm">
-                        <button type="submit"
-                            class="uae-btn-glow w-full px-8 py-4 bg-cyan-500 text-black font-bold text-sm tracking-widest uppercase shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                        <select name="interest"
+                            class="uae-input w-full px-5 py-3.5 bg-slate-900/80 border border-slate-700/50 rounded-xl text-slate-400 text-sm backdrop-blur-sm">
+                            <option>Cloud Infrastructure Migration</option>
+                            <option>AI & Machine Learning Solutions</option>
+                            <option>Web & Mobile App Development</option>
+                            <option>Cyber Security Audit</option>
+                            <option>Enterprise Software Consulting</option>
+                            <option>Other</option>
+                        </select>
+                        <textarea rows="3" name="message" placeholder="Briefly describe your project requirements..."
+                            required
+                            class="uae-input w-full px-5 py-3.5 bg-slate-900/80 border border-slate-700/50 rounded-xl text-white placeholder:text-slate-500 text-sm backdrop-blur-sm"></textarea>
+                        <button type="submit" id="submit-btn"
+                            class="uae-btn-glow w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm tracking-widest uppercase shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all">
                             <i class="fa-solid fa-paper-plane mr-2"></i>
-                            Request Free Audit
+                            Transmit Inquiry
                         </button>
                     </form>
                     <p class="text-slate-600 text-xs mt-4">We'll respond within 24 hours. No spam. No obligations.</p>
@@ -945,6 +912,7 @@
 
     <!-- ─── SCRIPTS ─── -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
     <script>
         // Initialize AOS
         AOS.init({
@@ -953,41 +921,6 @@
             duration: 700,
             easing: 'ease-out-cubic',
         });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Form handler → WhatsApp redirect
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const form = e.target;
-            const name = form.querySelector('[name="name"]').value;
-            const email = form.querySelector('[name="email"]').value;
-            const company = form.querySelector('[name="company"]').value;
-
-            const message = encodeURIComponent(
-                `Hi WYK Cloud,\n\nI'd like to request a free cloud audit.\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}`
-            );
-            window.open(`https://wa.me/40751750283?text=${message}`, '_blank');
-
-            const btn = form.querySelector('button[type="submit"]');
-            btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Opening WhatsApp...';
-            btn.classList.remove('bg-cyan-500');
-            btn.classList.add('bg-green-500');
-
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Request Free Audit';
-                btn.classList.remove('bg-green-500');
-                btn.classList.add('bg-cyan-500');
-                form.reset();
-            }, 3000);
-        }
     </script>
 </body>
 
