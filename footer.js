@@ -62,7 +62,7 @@ class WykFooter extends HTMLElement {
                             </li>
                             <li class="flex items-center">
                                 <i class="fa-solid fa-envelope text-cyan-400 mr-3"></i>
-                                <a href="mailto:office@wykcloud.co.uk" class="hover:text-cyan-400 transition-colors">office@wykcloud.co.uk</a>
+                                <a href="#" onmouseover="this.href='mailto:'+'office'+'@'+'wykcloud.co.uk'" class="hover:text-cyan-400 transition-colors"><span>office</span><span class="hidden">@bot.com</span><span>@</span><span>wykcloud.co.uk</span></a>
                             </li>
                             <li class="flex items-center">
                                 <i class="fa-solid fa-phone text-cyan-400 mr-3"></i>
