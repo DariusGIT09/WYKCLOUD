@@ -16,6 +16,11 @@
     <loc>https://wykcloud.co.uk/services.html</loc>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://wykcloud.co.uk/portfolio.html</loc>
+    <priority>0.8</priority>
+  </url>
   
   <url>
     <loc>https://wykcloud.co.uk/contact.html</loc>
